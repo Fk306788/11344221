@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap" rel="stylesheet">
+    
+    <title>期中專案-個人履歷網站-11344221</title>
+    
+    <style>
+
+        body {
+            font-family: "Cactus Classical Serif", serif;
+
+            background-color: #f9f9f9;
+
+            color: #555;
+
+            margin: 0;
+
+            padding: 20px;
+
+            background-image:
+                linear-gradient(to right, #eee 1px, transparent 1px),
+                linear-gradient(to bottom, #eee 1px, transparent 1px);
+
+            background-size: 20px 20px;
+        }
+
+        .container {
+
+            max-width: 900px;
+ 
+            margin: 20px auto;
+           background: linear-gradient(to bottom, #5a1cac, #ffffff);
+
+            border: 1px solid #ddd;
+
+            padding: 20px;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+            overflow-x: hidden; 
+        }
+
+
+        .wireframe-box {
+
+            border: 2px solid #aaa;
+
+            background-color: #f0f0f0;
+
+            display: flex;
+
+            align-items: center;
+      
+            justify-content: center;
+          
+            padding: 10px;
+          
+            margin-bottom: 15px;
+         
+            min-height: 50px;
+        
+            box-sizing: border-box;
+           
+            color: #000000;
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;         
+            margin-bottom: 15px;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+        
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background-image: url('西裝照.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-color: transparent; 
+        }
+
+        .name-box {
+            width: 200px;
+            margin: 0 15px;
+            padding: 20px 10px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .slogan-box {
+            flex-grow: 1;
+            margin: 0 0px;
+            font-size: 1.5em;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .intro-box {
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        .nav-bar {
+            width: 100%;
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            cursor: pointer; 
+            user-select: none; 
+            transition: background-color 0.3s ease; 
+        }
+
+        .nav-bar:hover {
+            background-color: #555; 
+        }
+
+        .main-content h2 {
+            text-align: center;
+            font-size: 2em;
+            margin: 20px 0;
+            padding: 15px;
+        }
+        
+        .specialty-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .specialty-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+        }
+
+        .specialty-desc {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .experience-box,
+        .other-box {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .contact-footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer-area {
+            width: 120px;
+            height: 50px;
+            border: 2px dashed #000000;
+            background: #ffffff;
+            text-align: center;
+            line-height: 50px;
+            margin: 20px auto 20px; 
+            color: #000000;
+            font-size: 0.9em;
+        
+        }
+
+        .animate-hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .name-box.animate-hidden {
+            transition-delay: 0.2s;
+        }
+        .slogan-box.animate-hidden {
+            transition-delay: 0.4s;
+        }
+
+        #collapsibleContent {
+            display: none; 
+        }
+        .spec-photo-1 {
+            background-image: url('演出照.jpg');
+        }
+
+        .spec-photo-2 {
+            background-image: url('拳擊.jpg');
+        }
+
+        .spec-photo-3 {
+            background-image: url('戲棚照片.jpg');
+        }
+
+    </style>
+    </head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="wireframe-box photo-placeholder animate-hidden"></div>
+            <div class="wireframe-box name-box animate-hidden">張佑丞</div>
+            <div class="wireframe-box slogan-box animate-hidden">「凡殺不死我的，只會使我更強大」</div>
+        </header>
+        
+        <section class="wireframe-box intro-box animate-hidden">
+            自我介紹:</br>
+             我是張佑丞，目前是五洲桃興閣的副團長 <br>今年19歲，個性隨興，對於每件事都有獨特的看法。</br>
+            興趣:喜歡運動，籃球排球都會打一點，平時愛好是聽歌，修理電腦。
+        </section>
+
+        <nav id="toggleButton" class="wireframe-box nav-bar animate-hidden">
+            點擊顯示個人專業
+        </nav>
+
+        <div id="collapsibleContent">
+            
+            <main class="main-content">
+                <h2 class="wireframe-box animate-hidden">專業項目</h2>
+
+                <article class="specialty-item">
+                    <div class="wireframe-box specialty-photo spec-photo-1 animate-hidden"></div>
+                    <div class="wireframe-box specialty-desc animate-hidden">此張照片為2023年受到桃園市政府邀約，演出鬥陣III，負責開場演出，為扮三仙中的祿仙，以此張圖片來表達出我對演出的專業性，目前為桃園的傑出演藝團隊。</div>
+                </article>
+
+                <article class="specialty-item">
+                    <div class="wireframe-box specialty-photo spec-photo-2 animate-hidden"></div>
+                    <div class="wireframe-box specialty-desc animate-hidden">在自由搏擊社團當中擔任公關，同時也有學習拳擊，此圖為我第一次參加比賽時的照片，除了可以當偶師外，還可以利用我的專業來保護雇主的安全，
+
+                    </div>
+                </article>
+
+                 <article class="specialty-item">
+                    <div class="wireframe-box specialty-photo spec-photo-3 animate-hidden"></div>
+                    <div class="wireframe-box specialty-desc animate-hidden">此圖為本劇團的戲棚照片，乃是劇團平日演出時的規模，如若想要更大的規模，詳情請洽團長電話，一定會讓你滿意。</div>
+                </article>
+
+                <section class="wireframe-box experience-box animate-hidden">
+                    經歷說明</br>
+                    我從小就在劇團當中生活，所以我的專業性完全不用擔心，並且我熱愛運動，如果雇主平日無事可約我出去運動，拳擊的部分我也略懂三分，如若雇主有需要也可以盡情洽談，只要錢給到位，我們的服務一定會到位的。<br>還請各位相信我們的專業。</br>
+
+                </section>
+
+                <section class="wireframe-box other-box animate-hidden">
+                    其他特殊經驗</br>
+                    目前同時也為陳錫煌傳統掌中劇團的藝生，排球在國中時跟隨球隊拿到乙組冠軍<br>
+                    高中時跟隨球隊拿到北區資格 apex段位達到大師，對nba也略懂三分。<br>
+                   會修最基礎的電腦外設。
+
+                </section>
+            </main>
+            
+           <footer class="wireframe-box contact-footer animate-hidden">
+                聯絡資訊</br>
+                gmail:a0936564234@gmail.com</br>
+                電話:0930000778</br>
+                line id:132645987</br>
+                </footer>
+            
+            <div class="footer-area animate-hidden">(頁尾區)</div>
+            <script>
+
+        const toggleButton = document.getElementById('toggleButton');
+        const collapsibleContent = document.getElementById('collapsibleContent');
+
+        toggleButton.addEventListener('click', () => {
+            
+            if (collapsibleContent.style.display === 'none' || collapsibleContent.style.display === '') {
+                collapsibleContent.style.display = 'block';
+                toggleButton.textContent = '隱藏個人專業';
+            } else {
+                collapsibleContent.style.display = 'none';
+                toggleButton.textContent = '顯示個人專業';
+            }
+        });
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, 
+            {
+                threshold: 0.1 
+            }
+        );
+
+        const hiddenElements = document.querySelectorAll('.animate-hidden');
+        
+        hiddenElements.forEach((el) => observer.observe(el));
+        
+    </script>
+
+</body>
+</html>
